@@ -2,13 +2,10 @@
 
 # dependencies
 /node_modules
-/api/node_modules
 /.pnp
 .pnp.js
 
 # Pictures
-/src/Assets/default.jpeg
-/api/public/uploads
 
 # testing
 /coverage
