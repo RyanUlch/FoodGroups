@@ -1,0 +1,23 @@
+.recipe-main {
+	width: 100vw;
+	height: 100vh;
+}
+
+.filter {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 2px;
+	max-width: 15rem;
+	margin: 0;
+	height: 100%;
+}
+
+.top {
+	border-bottom: 1px solid black;
+	padding-top: 15px;
+}
+
+.title {
+	font-family: 'Kdam Thmor Pro';
+}

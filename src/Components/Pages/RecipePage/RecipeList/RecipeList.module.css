@@ -1,0 +1,10 @@
+.recipeList {
+	margin: auto;
+	overflow-y: scroll;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	max-height: 80vh;
+	padding-bottom: 55vh;
+}

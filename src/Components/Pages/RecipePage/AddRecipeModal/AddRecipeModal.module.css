@@ -1,0 +1,78 @@
+.modalTitle {
+	text-align: center;
+	font-size: 2em;
+}
+
+.exitButton {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	background-color: rgb(243, 100, 100);
+	border-radius: 5px;
+}
+
+hr {
+	margin: 5px 0;
+	padding: 1px 0;
+	background-color:darkslategrey;
+}
+
+.label {
+	width: 6rem;
+	overflow: hidden;
+}
+
+.together {
+	display: flex;
+	padding: 5px;
+	flex-direction: row;
+	align-items: center;
+}
+
+.name {
+	width: 18rem;
+	float: left;
+}
+
+.description {
+	width: 80%;
+	resize: vertical;
+	min-height: 50px;
+}
+
+.addButton {
+	width: 90%;
+	height: 40px;
+	background-color: rgb(58, 189, 124);
+	border-radius: 5px;
+	margin-left: 50%;
+	margin-bottom: 10px;
+	transform: translateX(-50%);
+}
+
+.submitButton {
+	width: 90%;
+	height: 50px;
+	background-color: rgb(140, 140, 255);
+	border-radius: 5px;
+	margin-left: 50%;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	transform: translateX(-50%);
+}
+
+.imageText {
+	margin: auto;
+	width: 10rem;
+	margin-bottom: 5px;;
+}
+
+.image {
+	width: 16rem;
+	height: 9rem;
+	margin: 5px auto;
+	border-radius: 5px;
+	border: 1px solid black;
+	box-shadow: 2px 2px 5px black;
+	object-fit: cover;
+}

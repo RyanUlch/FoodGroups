@@ -1,0 +1,94 @@
+.showRecipe {
+	max-width: 85vw;
+	position: sticky;
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5px 5px 0 0 !important;
+	text-align: center;
+	z-index: 2;
+	min-height: 350px;
+	transition: height 2s;
+}
+
+.description {
+	font-size: 1em;
+	display: -webkit-box;
+    max-width: 50%;
+	min-width: 50%;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow-y: auto;
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+	height: 100%;
+	vertical-align:middle;
+}
+
+.recipeHeader {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 95%;
+	height: 11rem;
+	padding: 20px;
+	margin: 5px auto;
+	background-color: grey;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+.displayContainer {
+	max-height: 50vh;
+	min-height: 40vh;
+	overflow-y: auto;
+	padding-bottom: 20px;
+}
+
+.descriptionContainer {
+	width: 50%;
+	height: 100%;
+	border: 2px solid black;
+}
+
+.image {
+	width: 50%;
+	height: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+}
+
+.sidebyside {
+	display: flex;
+	flex-direction: row;
+	text-align: left;
+	padding: 0 50px 0 50px;
+	height: 100%;
+}
+
+.ingredients {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	border-right: 5px solid black;
+}
+
+.instructions {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+button {
+	margin: 5px;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.forDinner {
+	display: block;
+	margin: auto;
+	width: 80%;
+}

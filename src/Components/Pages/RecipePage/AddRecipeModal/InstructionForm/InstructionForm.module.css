@@ -1,0 +1,29 @@
+.recipeInstructionInput {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 5px 10px;
+}
+
+input {
+	margin: 0 5px;
+}
+
+.instruction {
+	margin: 0 5px;
+	width: 10rem;
+	resize: vertical;
+	min-height: 30px;
+}
+
+.timer {
+	width: 4rem;
+}
+
+.removeButton {
+	background-color: rgb(255, 66, 66);
+	border-radius: 5px;
+	height: 30px;
+	width: 30px;
+}

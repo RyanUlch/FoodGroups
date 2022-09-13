@@ -1,0 +1,16 @@
+.label {
+	font-weight: bold;
+}
+
+.filter {
+	border-radius: 5px;
+	width: 11rem;
+	margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	.label {
+		visibility: hidden;
+		position:fixed;
+	}
+}

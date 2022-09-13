@@ -1,0 +1,140 @@
+.dinnerCard {
+	/* width: 400px;
+	height: 100%; */
+	/* padding: 5px; */
+	/* margin: 0 auto; */
+}
+
+.dinnerImage {
+	width: 350px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 5px;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+
+
+.listItem:hover{
+	cursor: pointer;
+}
+
+.title {
+	text-align: center;
+	text-decoration: underline;
+}
+
+.description {
+	text-align: center;
+	margin-bottom: 10px;
+	max-height: 100px;
+	overflow-x: auto;
+	margin: 0 15px;
+}
+
+.subtitle {
+	margin: 5px auto;
+	text-align: center;
+}
+
+.scrollarea {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 50vh;
+}
+
+.ingredientList {
+	list-style-type: none;
+	padding: 0;
+}
+
+.ingredientListItems {
+	/* display: flex; */
+	/* gap: 5px; */
+	
+}
+
+.ingredientListItems > p {
+	display: inline;
+	/* padding: 0 10px; */
+	/* gap: 5px; */
+}
+
+.amount  p {
+	display: inline;
+}
+
+
+/* 
+.selected::before {
+	content: ✓;
+} */
+
+/* .selected:hover{
+	cursor: pointer;
+} */
+
+.carddisplay {
+	margin: 5px;
+	width: 400px;
+	/* height: 70%; */
+}
+
+.instructionListItem {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 0;
+}
+
+.subtitle {
+	text-decoration: underline;
+}
+
+.instructionList {
+	padding: 0;
+}
+
+.pInline {
+	display: inline;
+}
+
+.card {
+	background-color: rgb(0,97,127);
+	cursor: pointer;
+	/* width: 90%; */
+}
+
+.listItem {
+	/* border-bottom: 1px solid black; */
+	text-decoration: none;
+	color: black;
+	overflow-wrap:break-word;
+	word-break: break-all;
+	list-style-position: inside;
+	width: 100%;
+	/* display: flex; */
+	padding: 10px 20px 10px 0;
+
+}
+
+.selected {
+	text-decoration: line-through;
+	color: gray;
+	height: 30px;
+	overflow: hidden;
+	/* list-style: none; */
+	/* list-style: square; */
+	/* width: 45%; */
+	/* overflow-wrap: break-word; */
+}
+
+.useTimer {
+	width: 100%;
+
+}
+
+.itemTitle {
+	font-weight: bold;
+}

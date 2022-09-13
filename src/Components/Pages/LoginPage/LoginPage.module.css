@@ -1,0 +1,46 @@
+.error {
+	color: red;
+}
+
+.title {
+	/* padding-top: 50px; */
+	font-family: 'Kdam Thmor Pro';
+	text-align: center;
+
+}
+
+.subtitle {
+	font-family: 'Kdam Thmor Pro';
+	text-align: center;
+	padding-bottom: 10px;
+	text-decoration: underline;
+}
+
+.card {
+	background-color: rgb(0,97,127);
+	/* margin: 0 auto; */
+	padding: 20px;
+	height: 23vh;
+	width: 70vw;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.page {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content:space-around;
+	align-items: center;
+	padding: 50px 0;
+}

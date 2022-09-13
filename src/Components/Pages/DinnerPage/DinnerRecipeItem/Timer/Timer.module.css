@@ -1,0 +1,21 @@
+.running {
+	color: red;
+}
+
+.complete {
+	color: green;
+}
+
+.timer {
+	display: flex;
+	flex-direction: column;
+	background-color: antiquewhite;
+	width: 8rem;
+	height: 4rem;
+	text-align: center;
+	border-radius: 5px;
+	border: 1px solid black;
+	margin: 0 10px 0 auto;
+	justify-content: center;
+	cursor: pointer;
+}

@@ -1,0 +1,17 @@
+.input {
+	border-radius: 5px;
+	min-width: 11rem;
+	max-width: 11rem;
+	margin: 0.37rem;
+}
+
+.label {
+	font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+	.label {
+		visibility: hidden;
+		position:fixed;
+	}
+}

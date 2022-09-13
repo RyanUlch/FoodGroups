@@ -1,0 +1,10 @@
+.upload {
+	width: 14rem;
+	margin: auto;
+}
+
+.chooseButton {
+	border-radius: 5px;
+	margin: 5px;
+	padding: 3px;
+}

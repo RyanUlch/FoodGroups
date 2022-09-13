@@ -1,0 +1,40 @@
+.list {
+	list-style: none;
+	border: 2px solid black;
+	border-radius: 5px;
+	min-width: 5em;
+	padding: 5px;
+	text-align: center;
+	background-color: rgb(255, 255, 255);
+}
+
+.menu {
+	background-color: rgb(255, 255, 255);
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	border-radius: 0 0 5px 5px;
+	position: fixed;
+	width: 5em;
+	transform: translate(-7px, -1px);
+	text-decoration: underline;
+	text-align: center;
+	line-height: 2rem;
+}
+
+.menu ul {
+	padding: 0;
+}
+
+.menu li {
+	list-style: none;
+}
+
+.menu li:hover {
+	cursor: pointer;
+	color: rgb(52, 52, 52);
+}
+
+.menu li:active {
+	color: rgb(58, 121, 121);
+}

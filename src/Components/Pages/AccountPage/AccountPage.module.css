@@ -1,0 +1,67 @@
+.goback {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+
+.title {
+	font-family: 'Kdam Thmor Pro';
+	text-align: center;
+	width: 100vw;
+	height: 50px;
+	padding: 10px 0 10px 0;
+}
+
+
+
+.groups {
+	padding: 10px;
+	width: 95vw;
+	margin: auto;
+}
+
+.recipes {
+	padding: 10px;
+
+	width: 95vw;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	max-height: 30vh;
+}
+
+.grouptitle {
+	text-decoration: underline;
+	margin-bottom: 20px;
+}
+
+.norecipes {
+	text-align: center;
+}
+
+.recipetitle {
+	text-decoration: underline;
+	margin-bottom: 20px;
+}
+
+.recipelist {
+	list-style-type: none;
+	list-style-position: inside;
+	padding: 2px 0 2px 0;
+}
+
+.ulist {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 10vh;
+	max-height: 40vh;
+	flex-wrap: wrap;
+	overflow-x: auto;
+	margin: auto;
+}
+
+.recipelist > span {
+	color: rgb(172, 0, 0);
+	cursor: pointer;
+}

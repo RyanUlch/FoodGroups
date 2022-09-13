@@ -1,0 +1,31 @@
+.recipeIngredientInput {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 5px 10px;
+}
+
+input {
+	margin: 0 5px;
+}
+
+.ingredient {
+	width: 12rem;
+
+}
+
+.quantity {
+	width: 2rem;
+}
+
+.unit {
+	width: 4rem;
+}
+
+.removeButton {
+	background-color: rgb(255, 66, 66);
+	border-radius: 5px;
+	height: 30px;
+	width: 30px;
+}
