@@ -7,7 +7,7 @@
 	// line 84		- Use Fetch for image GET
 
 // Server host is the URL to the Node Server - Change once here when Server moves
-const serverHost = 'http://localhost:5000';
+const serverHost = 'https://foodgroupsserver.herokuapp.com/';
 
 	/* Set Session Helper */
 /* If given a userID and sessionID, add it to sessionStorage, otherwise, remove from sessionStorage */
