@@ -1,5 +1,6 @@
 {
   "name": "food-groups",
+  "homepage": "http://food-groups.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
