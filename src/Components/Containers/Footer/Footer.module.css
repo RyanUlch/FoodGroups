@@ -1,0 +1,43 @@
+.footer {
+ color: white;	
+}
+
+.card {
+	background-color: #00617f;
+	position: absolute;
+	bottom: 0;
+	width: 100vw;
+	margin: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.attr {
+	text-align: center;
+}
+
+.attrMain {
+ font-size: 0.9em;
+}
+
+.attrSub {
+	font-size: 0.7em;
+}
+
+.attr > a:link {
+	color: #27ccff
+}
+
+.attr > a:visited {
+	color: #27ccff
+
+}
+
+.attr > a:hover {
+	color: #259cc0
+
+}
+
+.attr > a:active {
+	color: #6abbd4
+
+}

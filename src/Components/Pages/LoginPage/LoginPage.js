@@ -4,6 +4,7 @@ import classes from './LoginPage.module.css';
 import { useContext, useState } from 'react';
 // Component Imports
 import Card from '../../Containers/Card/Card';
+import Footer from '../../Containers/Footer/Footer';
 // Context Import
 import { UserContext } from '../../../Context/user-context';
 // Helper Imports
@@ -40,51 +41,45 @@ const LoginPage = (props) => {
 	}
 
 	return (
-		<main className={classes.page}>
-			<Card className={classes.card}>
-				<h1 className={classes.title}>Food Groups</h1>
-				<p className={classes.subtitle}>Recipe sharing with those you care about!</p>
-			</Card>
-			<section className="login">
+		<>
+			<main className={classes.page}>
 				<Card className={classes.card}>
-					<h2 className={classes.subtitle}>Login</h2>
-					{error && <p className={classes.error}>{error}</p>}
-					<form  className={classes.form} onSubmit={loginHandler} method="post">
-						<label htmlFor="loginusername">
-							<i className="fas fa-user"></i>
-						</label>
-						<input autoComplete='username' type="text" name="username" placeholder="Username" id="loginusername" required />
-						<label htmlFor="loginpassword">
-							<i className="fas fa-lock"></i>
-						</label>
-						<input autoComplete='current-password' type="password" name="password" placeholder="Password" id="loginpassword" required />
-						<input type="submit" value="Login" />
-					</form>
+					<h1 className={classes.title}>Food Groups</h1>
+					<p className={classes.subtitle}>Recipe sharing with those you care about!</p>
 				</Card>
-			</section>
+				<section className="login">
+					<Card className={classes.card}>
+						<h2 className={classes.subtitle}>Login</h2>
+						{error && <p className={classes.error}>{error}</p>}
+						<form  className={classes.form} onSubmit={loginHandler} method="post">
+							<label hidden htmlFor="loginusername">Username for Login</label>
+							<input className={`${classes.input} ${classes.username}`} autoComplete='username' type="text" name="username" placeholder="Username" id="loginusername" required />
+							<label hidden htmlFor="loginpassword">Password for Login</label>
+							<input className={`${classes.input} ${classes.password}`} autoComplete='current-password' type="password" name="password" placeholder="Password" id="loginpassword" required />
+							<label hidden htmlFor="loginsubmit">Submit button for Login</label>
+							<input className={`${classes.input} ${classes.submit}`} type="submit" value="Login" id="loginsubmit" />
+						</form>
+					</Card>
+				</section>
 
-			<section className="signup login">
-				<Card className={classes.card}>
-					<h2 className={classes.subtitle}>Sign-Up</h2>
-					<form className={classes.form} onSubmit={signupHandler} method="post">
-						<label htmlFor="signupusername">
-							<i className="fas fa-user"></i>
-						</label>
-						<input autoComplete='username' type="text" name="username" placeholder="Username" id="signupusername" required />
-						<label htmlFor="email">
-							<i className="fas fa-user"></i>
-						</label>
-						<input autoComplete='email' type="email" name="email" placeholder="Email" id="email" required />
-						
-						<label htmlFor="signuppassword">
-							<i className="fas fa-lock"></i>
-						</label>
-						<input autoComplete='current-password' type="password" name="password" placeholder="Password" id="signuppassword" required />
-						<input type="submit" value="Sign Up" />
-					</form>
-				</Card>
-			</section>
-		</main>
+				<section className="signup login">
+					<Card className={classes.card}>
+						<h2 className={classes.subtitle}>Sign-Up</h2>
+						<form className={classes.form} onSubmit={signupHandler} method="post">
+							<label hidden htmlFor="signupusername">Username for Sign-Up</label>
+							<input className={`${classes.input} ${classes.username}`} autoComplete='username' type="text" name="username" placeholder="Username" id="signupusername" required />
+							<label hidden htmlFor="signupemail">Email for Sign-Up</label>
+							<input className={`${classes.input} ${classes.email}`} autoComplete='email' type="email" name="email" placeholder="Email" id="signupemail" required />
+							<label hidden htmlFor="signuppassword">Password for Sign-up</label>
+							<input className={`${classes.input} ${classes.password}`} autoComplete='current-password' type="password" name="password" placeholder="Password" id="signuppassword" required />
+							<label hidden htmlFor="signupsubmit">Submit Button for Sign-Up</label>
+							<input className={`${classes.input} ${classes.submit}`} type="submit" value="Sign Up" id="signupsubmit"/>
+						</form>
+					</Card>
+				</section>
+			</main>
+			<Footer />
+		</>
 	);
 }
 
