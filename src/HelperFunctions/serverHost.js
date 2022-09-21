@@ -7,7 +7,8 @@
 	// line 84		- Use Fetch for image GET
 
 // Server host is the URL to the Node Server - Change once here when Server moves
-const serverHost = 'https://foodgroupsserver.herokuapp.com/';
+const serverHost = 'https://food-groups.com/api';
+const corsPolicy = 'cors';
 
 	/* Set Session Helper */
 /* If given a userID and sessionID, add it to sessionStorage, otherwise, remove from sessionStorage */
@@ -25,9 +26,11 @@ export const setSession = (payload = null) => {
 /* Send Body to the Server Path, run success/error handlers if provided */
 export const postFetch = async (path, body, successHandler = null, failureHandler = null) => {
 	// Initialization settings with a stringified body (always an object), for Fetch
+	console.log(body);
+	
 	const init = {
 		method: 'POST',					headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify(body),		mode: 'cors'
+		body: JSON.stringify(body),		mode: corsPolicy
 	};
 
 	// Send request to Server and wait for response
@@ -50,7 +53,7 @@ export const deleteFetch = async (path, body, successHandler = null, failureHand
 	// Initialization settings with a stringified body (always an object), for Fetch
 	const init = {
 		method: 'DELETE',				headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify(body),		mode: 'cors'
+		body: JSON.stringify(body),		mode: corsPolicy
 	};
 
 	// Send request to Server and wait for response
@@ -71,7 +74,7 @@ export const deleteFetch = async (path, body, successHandler = null, failureHand
 /* Uploads image to server */
 export const uploadImagePost = async (path, formData) => {
 	// Initialization settings with a stringified body (always an object), for Fetch
-	const init = { method: 'POST', body: formData, mode: 'cors'	};
+	const init = { method: 'POST', body: formData, mode: corsPolicy	};
 
 	const response = await fetch(`${serverHost}/${path}`, init);
 	const jsonResponse = response.ok ? await response.json() : { response: response };
