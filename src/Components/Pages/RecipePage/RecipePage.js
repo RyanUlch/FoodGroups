@@ -13,6 +13,7 @@ import RecipeList from './RecipeList/RecipeList';
 import AddRecipeModal from './AddRecipeModal/AddRecipeModal';
 import RecipeDisplay from './RecipeDisplay/RecipeDisplay';
 import Sort from './Sort/Sort';
+import Card from '../../Containers/Card/Card';
 // Context Import
 import { UserContext } from '../../../Context/user-context';
 
@@ -53,6 +54,11 @@ const RecipePage = (props) => {
 	// Change page to 'Dinner' page
 	const startDinnerHandler = () => {
 		ctxDispatch({ type: 'CHANGEPAGE', payload: 'dinner'});
+	}
+
+	// Logout and change page to 'Login' page
+	const logoutHandler = () => {
+		ctxDispatch({ type: 'LOGOUT'});
 	}
 
 	// Set the next key for React to handle list
@@ -143,30 +149,40 @@ const RecipePage = (props) => {
 		}
 	}, [sortBy, ctx.recipeOrder.filtered]);
 
-	return (
-		<div className={classes.container}>
-			{isShowAddModal && <AddRecipeModal onUpdate={setDidUpdate} id={editingRecipe} onSubmitEdit={setEditingRecipe}  recipelength={nextKey} onCloseModal={closeModalHandler} onAddRecipe={props.onAddRecipe}></AddRecipeModal>}
-			<Header>
-				<h1 className={classes.title}>Food Groups</h1>
-				<div className={classes.filter}>
-					<SearchBar onSetSearch={setSearchInput} searchInput={searchInput}/>
-					<Sort onSort={setSortBy} dispatch={ctxDispatch} />
-				</div>
-				<AccountDropDown dispatch={ctxDispatch} name={ctx.user.username}/>	
-			</Header>
-			<main className='deselectItem' onMouseDown={removeSelectionHandler}>
-				<div className={classes.top}>
-					<RecipeBar>
-						<DisplayButton onFilter={setFilterBy} groups={ctx.groups} />
-						<button disabled={disableButton} onClick={startDinnerHandler}>Start Dinner!{`(${props.dinnerList.length})`} </button>
-						<AddRecipeButton onOpenModal={openModalHandler}/>
-					</RecipeBar>
-				</div>
-				<RecipeList list={ctx.recipeOrder.order} selected={selectedItem} onSelectItem={setSelectedItem} onRemoveSelctItem={removeSelectionHandler}/>
-				{selectedItem && <RecipeDisplay setSelection={setSelectedItem} dinnerList={props.dinnerList} onDinnerSelect={props.onDinnerRecipes} onSetEdit={setEditingRecipe} onSetEditModal={setIsShowAddModal} id={selectedItem} />}
-			</main>
-		</div>
-	);
+	if (ctx.isLoaded) {
+		return (
+			<div className={classes.container}>
+				{isShowAddModal && <AddRecipeModal onUpdate={setDidUpdate} id={editingRecipe} onSubmitEdit={setEditingRecipe}  recipelength={nextKey} onCloseModal={closeModalHandler} onAddRecipe={props.onAddRecipe}></AddRecipeModal>}
+				<Header>
+					<h1 className={classes.title}>Food Groups</h1>
+					<div className={classes.filter}>
+						<SearchBar onSetSearch={setSearchInput} searchInput={searchInput}/>
+						<Sort onSort={setSortBy} dispatch={ctxDispatch} />
+					</div>
+					<AccountDropDown dispatch={ctxDispatch} name={ctx.user.username}/>	
+				</Header>
+				<main className='deselectItem' onMouseDown={removeSelectionHandler}>
+					<div className={classes.top}>
+						<RecipeBar>
+							<DisplayButton onFilter={setFilterBy} groups={ctx.groups} />
+							<button disabled={disableButton} onClick={startDinnerHandler}>Start Dinner!{`(${props.dinnerList.length})`} </button>
+							<AddRecipeButton onOpenModal={openModalHandler}/>
+						</RecipeBar>
+					</div>
+					<RecipeList list={ctx.recipeOrder.order} selected={selectedItem} onSelectItem={setSelectedItem} onRemoveSelctItem={removeSelectionHandler}/>
+					{selectedItem && <RecipeDisplay setSelection={setSelectedItem} dinnerList={props.dinnerList} onDinnerSelect={props.onDinnerRecipes} onSetEdit={setEditingRecipe} onSetEditModal={setIsShowAddModal} id={selectedItem} />}
+				</main>
+			</div>
+		);
+	} else {
+		return (
+			<Card className={classes.cardError}>
+				<h1>Page is Loading...</h1>
+				<p> If this page does not load in a few seconds, there may be an issue with the server connection. Click the button below to be redirected back to the Login Page to try and log in again...</p>
+				<button onClick={logoutHandler}>Log Out</button>
+			</Card>
+		)
+	}
 }
 
 export default RecipePage;

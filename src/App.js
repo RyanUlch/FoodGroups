@@ -24,7 +24,7 @@ const App = () => {
 		if (sessionStorage.getItem('sessionID')) {
 			getSessionConfirm(ctxDispatch);
 		} else {
-			ctxDispatch({ type: 'CHANGEPAGE', payload: 'login' });
+			ctxDispatch({ type: 'CHANGEPAGE', payload: 'dinner' });
 		}
 	}, []);
 
@@ -37,9 +37,9 @@ const App = () => {
 			<>
 					{ctx.page === 'loading' 					&& <><h1>Loading...</h1><p>Please Wait</p></> }
 					{ctx.page === 'login' 	&& !ctx.user.userID && <LoginPage />}
-					{ctx.page === 'account' && ctx.user.userID 	&& <AccountPage />}
-					{ctx.page === 'recipes'	&& ctx.user.userID 	&& <RecipePage onDinnerRecipes={setDinnerList} dinnerList={dinnerList} />}
-					{ctx.page === 'dinner'	&& ctx.user.userID 	&& <DinnerPage dispatch={ctxDispatch} dinnerList={dinnerList}/>} 
+					{ctx.page === 'account' /*&& ctx.user.userID*/ 	&& <AccountPage />}
+					{ctx.page === 'recipes'	/*&& ctx.user.userID*/ 	&& <RecipePage onDinnerRecipes={setDinnerList} dinnerList={dinnerList} />}
+					{ctx.page === 'dinner'	/*&& ctx.user.userID*/ 	&& <DinnerPage dispatch={ctxDispatch} dinnerList={dinnerList}/>} 
 			</>
 	);
 }

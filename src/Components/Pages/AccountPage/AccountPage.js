@@ -6,6 +6,7 @@ import { useEffect, useState, useContext } from 'react';
 import JoinGroupModal from './JoinGroup/JoinGroup';
 import CreateGroupModal from './CreateGroup/CreateGroup';
 import Card from '../../Containers/Card/Card';
+import Footer from '../../Containers/Footer/Footer';
 // Context Import
 import { UserContext } from '../../../Context/user-context';
 // Helper Function Imports
@@ -91,36 +92,49 @@ const AccountPage = (props) => {
 		ctxDispatch({ type: 'CHANGEPAGE', payload: 'recipes'});
 	}
 
-	return (
-		<main>
-			{modal === 'join' && <JoinGroupModal onCloseModal={setModal}/>}
-			{modal === 'create' && <CreateGroupModal  onCloseModal={setModal}/>}
+	if (ctx.isLoaded) {
+		return (
+			<>
+			<main>
+				{modal === 'join' && <JoinGroupModal onCloseModal={setModal}/>}
+				{modal === 'create' && <CreateGroupModal  onCloseModal={setModal}/>}
 
-			<button className={classes.goback} onClick={goBackHandler}>Go Back</button>
-			<h1 className={classes.title}>{`Hello ${ctx.user.username}`}</h1>
+				<button className={classes.goback} onClick={goBackHandler}>Go Back</button>
+				<h1 className={classes.title}>{`Hello ${ctx.user.username}`}</h1>
 
-			<hr />
-			<Card>
-				<section className={classes.groups}>
-					<h2 className={classes.grouptitle}>You're apart of these Groups:</h2>
-					<ul>
-						{groups.length ? groups : <p className={classes.norecipes}>No Groups Joined</p>}
-					</ul>
-					<button onClick={joinButtonHandler}>Join Group</button>
-					<button onClick={createButtonHandler}>Create Group</button>
-				</section>
+				<hr />
+				<Card className={classes.card}>
+					<section className={classes.groups}>
+						<h2 className={classes.grouptitle}>You're apart of these Groups:</h2>
+						<ul className={classes.list}>
+							{groups.length ? groups : <p className={classes.norecipes}>No Groups Joined</p>}
+						</ul>
+						<button className={classes.button} onClick={joinButtonHandler}>Join Group</button>
+						<button className={classes.button} onClick={createButtonHandler}>Create Group</button>
+					</section>
+				</Card>
+				<hr />
+				<Card className={classes.card}>
+					<section className={classes.recipes}>
+						<h2 className={classes.recipetitle}>You've made these Recipes:</h2>
+						<ul className={`${classes.ulist} ${classes.list}`}>
+							{recipes.length ? recipes : 'No Recipes Created'}
+						</ul>
+					</section>
+				</Card>
+			</main>
+			<Footer></Footer>
+			</>
+		);
+	} else {
+		return (
+			<Card className={classes.cardError}>
+				<h1>Page is Loading...</h1>
+				<p> If this page does not load in a few seconds, there may be an issue with the server connection. Click the button below to be redirected back to the Recipe Page...</p>
+				<button onClick={goBackHandler}>Go Back</button>
 			</Card>
-			<hr />
-			<Card>
-				<section className={classes.recipes}>
-					<h2 className={classes.recipetitle}>You've made these Recipes:</h2>
-					<ul className={classes.ulist}>
-						{recipes.length ? recipes : 'No Recipes Created'}
-					</ul>
-				</section>
-			</Card>
-		</main>
-	);
+		)
+	}
 }
 
 export default AccountPage;

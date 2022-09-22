@@ -21,3 +21,20 @@
 .title {
 	font-family: 'Kdam Thmor Pro';
 }
+
+.cardError {
+	width: 70vw;
+	margin: 50vh auto;
+	transform: translateY(-50%);
+	text-align: center;
+}
+
+.card {
+	width: 90vw;
+	margin: auto;
+	height: 40vh;
+	text-align: center;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: #00617f;
+}
