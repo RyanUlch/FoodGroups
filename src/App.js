@@ -24,7 +24,7 @@ const App = () => {
 		if (sessionStorage.getItem('sessionID')) {
 			getSessionConfirm(ctxDispatch);
 		} else {
-			ctxDispatch({ type: 'CHANGEPAGE', payload: 'dinner' });
+			ctxDispatch({ type: 'CHANGEPAGE', payload: 'login' });
 		}
 	}, []);
 

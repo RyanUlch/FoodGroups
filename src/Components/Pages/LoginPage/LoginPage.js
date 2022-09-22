@@ -13,7 +13,8 @@ import { getUserAccount, createUserAccount } from '../../../HelperFunctions/acco
 // Page allowing user to login, or sign up 
 const LoginPage = (props) => {
 	const [ctx, ctxDispatch] = useContext(UserContext);
-	const [error, setError] = useState(null);
+	const [errorLogin, setErrorLogin] = useState(null);
+	const [errorSignup, setErrorSignup] = useState(null);
 
 	// Attempt to log in with inputed values
 	const loginHandler = (event) => {
@@ -23,20 +24,21 @@ const LoginPage = (props) => {
 			event.target.children[3].value, // Password from Form,
 			ctx,
 			ctxDispatch,
-			setError,
+			setErrorLogin,
 		);
 	};
 
 	// Attempt to sign-up with inputed values
 	const signupHandler = (event) => {
 		event.preventDefault();
+		console.log('here',event.target.children);
 		createUserAccount(
 			event.target.children[1].value, // Username from Form
 			event.target.children[3].value, // E-mail from Form
 			event.target.children[5].value, // Password from Form
 			ctx,
 			ctxDispatch,
-			setError,
+			setErrorSignup,
 		)
 	}
 
@@ -50,7 +52,7 @@ const LoginPage = (props) => {
 				<section className="login">
 					<Card className={classes.card}>
 						<h2 className={classes.subtitle}>Login</h2>
-						{error && <p className={classes.error}>{error}</p>}
+						{errorLogin && <p className={classes.error}>{errorLogin}</p>}
 						<form  className={classes.form} onSubmit={loginHandler} method="post">
 							<label hidden htmlFor="loginusername">Username for Login</label>
 							<input className={`${classes.input} ${classes.username}`} autoComplete='username' type="text" name="username" placeholder="Username" id="loginusername" required />
@@ -65,6 +67,7 @@ const LoginPage = (props) => {
 				<section className="signup login">
 					<Card className={classes.card}>
 						<h2 className={classes.subtitle}>Sign-Up</h2>
+						{errorSignup && <p className={classes.error}>{errorSignup}</p>}
 						<form className={classes.form} onSubmit={signupHandler} method="post">
 							<label hidden htmlFor="signupusername">Username for Sign-Up</label>
 							<input className={`${classes.input} ${classes.username}`} autoComplete='username' type="text" name="username" placeholder="Username" id="signupusername" required />

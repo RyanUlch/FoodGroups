@@ -26,8 +26,6 @@ export const setSession = (payload = null) => {
 /* Send Body to the Server Path, run success/error handlers if provided */
 export const postFetch = async (path, body, successHandler = null, failureHandler = null) => {
 	// Initialization settings with a stringified body (always an object), for Fetch
-	console.log(body);
-	
 	const init = {
 		method: 'POST',					headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(body),		mode: corsPolicy
@@ -41,6 +39,7 @@ export const postFetch = async (path, body, successHandler = null, failureHandle
 	if (jsonResponse.response === 'success') {
 		if (successHandler) { successHandler(jsonResponse); }
 	} else {
+		console.log(jsonResponse.msg);
 		// If an failureHandler was not provided, output error in console
 		if (failureHandler) { failureHandler(jsonResponse.msg); }
 		else { console.error(jsonResponse.msg) }
