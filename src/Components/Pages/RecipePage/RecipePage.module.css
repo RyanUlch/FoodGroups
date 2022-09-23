@@ -25,7 +25,7 @@
 .cardError {
 	width: 70vw;
 	margin: 50vh auto;
-	transform: translateY(-50%);
+	/* transform: translateY(-50%); */
 	text-align: center;
 }
 

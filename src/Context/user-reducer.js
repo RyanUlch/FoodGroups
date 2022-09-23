@@ -1,20 +1,20 @@
 // Table of Contents:
-	// line 31		- AddFav
-	// line 44		- AddRecipe
-	// line 118		- DeleteRecipe
-	// line 160		- EditRecipe
-	// line 186		- RemFav
-	// line 199		- SetImage
-	// line 210		- SetRecipes
-	// line 253		- Login
-	// line 262		- Logout
-	// line 269		- JoinGroup
-	// line 279		- LeaveGroup
-	// line 291		- SetGroups
-	// line 297		- ChangePage
-	// line 305		- SearchBy
-	// line 316		- SortFilter
-	// line 362		- Default
+	// line 27		- AddFav
+	// line 41		- AddRecipe
+	// line 115		- DeleteRecipe
+	// line 156		- EditRecipe
+	// line 182		- RemFav
+	// line 195		- SetImage
+	// line 207		- SetRecipes
+	// line 250		- Login
+	// line 260		- Logout
+	// line 266		- JoinGroup
+	// line 275		- LeaveGroup
+	// line 287		- SetGroups
+	// line 293		- ChangePage
+	// line 302		- SearchBy
+	// line 312		- SortFilter
+	// line 322		- Default
 
 // Initial User State Import
 import { nullUser } from "./user-context";
@@ -260,7 +260,6 @@ const reducer = (state, action) => {
 		case 'LOGOUT': {
 			return { ...nullUser, page: 'login'};
 		}
-		
 		
 /* Regarding Groups */ /* Regarding Groups */ /* Regarding Groups */ /* Regarding Groups */ /* Regarding Groups */
 		// Add group to users groups

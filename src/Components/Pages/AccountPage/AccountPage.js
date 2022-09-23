@@ -92,7 +92,7 @@ const AccountPage = (props) => {
 		ctxDispatch({ type: 'CHANGEPAGE', payload: 'recipes'});
 	}
 
-	if (ctx.isLoaded) {
+	if (ctx.loaded) {
 		return (
 			<>
 			<main>

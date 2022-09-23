@@ -149,7 +149,7 @@ const RecipePage = (props) => {
 		}
 	}, [sortBy, ctx.recipeOrder.filtered]);
 
-	if (ctx.isLoaded) {
+	if (ctx.loaded) {
 		return (
 			<div className={classes.container}>
 				{isShowAddModal && <AddRecipeModal onUpdate={setDidUpdate} id={editingRecipe} onSubmitEdit={setEditingRecipe}  recipelength={nextKey} onCloseModal={closeModalHandler} onAddRecipe={props.onAddRecipe}></AddRecipeModal>}
