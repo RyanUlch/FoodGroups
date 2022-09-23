@@ -11,6 +11,8 @@ const DisplayButton = (props) => {
 		} else if (event.target.value === 'All Recipes') {
 			props.onFilter('all');
 		} else {
+			// DELETE
+			console.log(props.groups.findIndex(element => element.groupName === event.target.value));
 			props.onFilter(props.groups.findIndex(element => element.groupName === event.target.value));
 		}
 	};
@@ -24,6 +26,10 @@ const DisplayButton = (props) => {
 			for (const group of props.groups) {
 				optionList.push(<option key={group.groupID} value={group.groupName}>{group.groupName}</option>);
 			}
+
+			// DELETE
+			// optionList.push(<option key={1} value={'Fake Group'}>Fake Group</option>);
+
 			return optionList;
 		}
 	}
