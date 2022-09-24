@@ -81,6 +81,10 @@
 	width: 50%;
 }
 
+.instruction {
+	margin-top: 3px;
+}
+
 button {
 	margin: 5px;
 	border-radius: 5px;
@@ -91,4 +95,10 @@ button {
 	display: block;
 	margin: auto;
 	width: 80%;
+}
+
+.timer {
+	text-align: right;
+	text-decoration: underline;
+	color: #00617f;
 }

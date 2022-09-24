@@ -44,11 +44,11 @@ const IngredientForm = (props) => {
 			</div>
 			<div className={classes.together}>
 				<label htmlFor='amount'>Qty:</label>
-				<input className={classes.quantity} onChange={onChangeHandler} value={ingredient.amount} name='amount' type='number' min='0' id='amount' step='1' required/>
+				<input className={classes.quantity} onChange={onChangeHandler} value={ingredient.amount} name='amount' type='number' min='0' id='amount' required/>
 			</div>
 			<div className={classes.together}>
-				<label htmlFor='unit'>Unit:</label>
-				<input className={classes.unit} onChange={onChangeHandler} value={ingredient.unit} name='unit' type='text' id='unit' maxLength='50' required/>
+				<label htmlFor='unit'>Unit (optional):</label>
+				<input className={classes.unit} onChange={onChangeHandler} value={ingredient.unit} name='unit' type='text' id='unit' maxLength='50'/>
 			</div>
 			{props.onRemove && <button type='button' className={classes.removeButton} value={props.value} onClick={props.onRemove}>-</button>}
 		</span>

@@ -13,7 +13,11 @@ const IngredientDisplay = (props) => {
 	}, [props.ingredient]);
 
 	return (
-		<li className={classes.listItem}>{props.ingredient.ingredient} {amount * props.servings} {props.ingredient.unit}</li>
+		<li className={classes.listItem}>
+			<span className={classes.item}>{props.ingredient.ingredient}</span>
+			<span className={classes.item}>{amount * props.servings}</span>
+			<span className={classes.item}>{props.ingredient.unit}</span>
+		</li>
 	);
 }
 

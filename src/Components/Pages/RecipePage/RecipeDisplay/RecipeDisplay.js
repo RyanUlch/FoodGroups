@@ -36,7 +36,7 @@ const RecipeDisplay = (props) => {
 	const instructions = () => {
 		let arr = [];
 		for (const instruction of recipe.instructions) {
-			arr.push(<li key={arr.length}>{instruction.instruction} {timerEval(instruction)}</li>)
+			arr.push(<li className={classes.instruction} key={arr.length}>{instruction.instruction}<span className={classes.timer}>{timerEval(instruction)}</span></li>)
 		}
 		return arr;
 	};
@@ -130,7 +130,7 @@ const RecipeDisplay = (props) => {
 					<hr />
 					<div className={classes.sidebyside}>
 						<ul className={classes.ingredients}>{ingredients()}</ul>
-						<ul className={classes.instructions}>{instructions()}</ul>
+						<ol className={classes.instructions}>{instructions()}</ol>
 					</div>
 				</div>
 			</Card>
