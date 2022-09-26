@@ -1,0 +1,36 @@
+.button {
+	width: 20rem;
+	font-family: 'Kdam Thmor Pro';
+	font-size: 2rem;
+}
+
+.card {
+	width: 80vw;
+	margin:20px auto;
+	background-color: #00617f;
+	overflow-y: auto;
+	padding-right: 15px;
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	height: 93vh;
+}
+
+.hr {
+	border: 1px solid black;
+}
+
+.mainTitle {
+	text-align: center;
+	font-family: 'Kdam Thmor Pro';
+}
+
+.subtitle {
+	text-align: center;
+}
+
+.buttonContainer {
+	text-align: center;
+}

@@ -7,6 +7,7 @@ import RecipePage 							from './Components/Pages/RecipePage/RecipePage';
 import DinnerPage 							from './Components/Pages/DinnerPage/DinnerPage';
 import LoginPage 							from './Components/Pages/LoginPage/LoginPage';
 import AccountPage 							from './Components/Pages/AccountPage/AccountPage';
+import WelcomePage							from './Components/Pages/WelcomePage/WelcomePage';
 // Helper Imports
 import { getSessionConfirm } 				from './HelperFunctions/session';
 import { retrieveImages } 					from './HelperFunctions/images';
@@ -39,6 +40,7 @@ const App = () => {
 			<>
 					{ctx.page === 'loading' 					&& <><h1>Loading...</h1><p>Please Wait</p></> }
 					{ctx.page === 'login' 	&& !ctx.user.userID && <LoginPage />}
+					{ctx.page === 'welcome'	&& ctx.user.userID	&& <WelcomePage dispatch={ctxDispatch}/>}
 					{ctx.page === 'account' && ctx.user.userID 	&& <AccountPage />}
 					{ctx.page === 'recipes'	&& ctx.user.userID 	&& <RecipePage onDinnerRecipes={setDinnerList} dinnerList={dinnerList} />}
 					{ctx.page === 'dinner'	&& ctx.user.userID 	&& <DinnerPage dispatch={ctxDispatch} dinnerList={dinnerList}/>} 

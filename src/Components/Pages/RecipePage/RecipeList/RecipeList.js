@@ -12,6 +12,9 @@ const RecipeList = (props) => {
 	const [ctx, ctxDispatch] = useContext(UserContext);
 	const [shownRecipes, setShownRecipes] = useState(null);
 
+	// Used to force re-draw when selection changes so that selected recipe is highlighted
+	useEffect(() => {}, [props.selected]);
+
 	// Create a "Recipe' for each item in the context order
 	useEffect(() => {
 		if (ctx.recipeOrder.order) {

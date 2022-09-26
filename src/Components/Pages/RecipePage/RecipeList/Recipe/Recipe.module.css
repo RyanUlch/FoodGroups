@@ -34,3 +34,9 @@
 	font-weight: bold;
 	text-overflow: ellipsis;
 }
+
+.Card {
+	border: 2px solid black;
+	top: 2px;
+	box-shadow: 7px 7px 12px black;
+}

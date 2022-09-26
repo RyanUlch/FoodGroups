@@ -24,6 +24,11 @@ const Recipe = (props) => {
 		props.onSelectItem(props.id);
 	}
 
+	// used to know to re-draw if selection changes.
+	useEffect(() => {
+		setSelected(props.isSelected);
+	}, [props.isSelected])
+
 	// Get image path of recipe
 	const displayImg = () => {
 		let imgPath;
@@ -38,8 +43,8 @@ const Recipe = (props) => {
 	// If the recipe is not yet loaded, show loading within Card
 	if (recipe) {
 		return (
-			<Card >
-				<div onClick={onSelectHandler} className={`${classes.recipeCard} ${props.isSelected && classes.selected} itemSelected`}>
+			<Card className={selected && classes.Card}>
+				<div onClick={onSelectHandler} className={`${classes.recipeCard} ${selected && classes.selected}`}>
 					{recipe !== null ? <h3 className={classes.title}>{recipe.recipeName}</h3> : ''}
 					{recipe !== null ? <p className={classes.recipeDescription}>{recipe.recipeDescription}</p> : ''}
 					{recipe !== null ? <img draggable='false' className={classes.image} src={displayImg()} /> : '' }

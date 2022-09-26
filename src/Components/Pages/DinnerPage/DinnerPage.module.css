@@ -8,7 +8,7 @@
 	overflow-x: auto;
 	padding: 20px 5px 20px 5px;
 	flex: 1;
-
+	justify-content: center;
 }
 
 .page {
