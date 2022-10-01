@@ -21,12 +21,12 @@ export const getUserAccount = (user, pass, ctx, dispatch, setError) => {
 		(response) => {
 			setSession(response.payload);
 			setError(null);
-			dispatch({ type: 'LOGIN', payload: response.payload });
+			dispatch({ type: 'LOGIN', payload: {user: response.payload, page: 'recipes'}});
 			getGroups(response.payload.userID, dispatch);
 		},
 	// FailureHandler:
 		(msg) => {
-			setSession();
+			setSession(null);
 			setError(msg);
 		}
 	);
@@ -44,12 +44,12 @@ export const createUserAccount = (user, email, pass, ctx, dispatch, setError) =>
 		(response) => {
 			setSession(response.payload);
 			setError(null);
-			dispatch({ type: 'LOGIN', payload: response.payload });
+			dispatch({ type: 'LOGIN', payload: {user: response.payload, page: 'welcome'}});
 			getGroups(response.payload.userID, dispatch);
 		},
 	// FailureHandler
 		(msg) => {
-			setSession();
+			setSession(null);
 			setError(msg);
 		}
 	);
@@ -58,7 +58,7 @@ export const createUserAccount = (user, email, pass, ctx, dispatch, setError) =>
 	/* Logout handler */
 /* No need to contact server, when user logs out, they lose their session token */ 
 export const logout = (dispatch) => {
-	setSession();
+	setSession(null);
 	dispatch({ type: 'LOGOUT' });
 }
 

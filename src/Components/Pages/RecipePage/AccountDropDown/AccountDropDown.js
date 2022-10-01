@@ -2,8 +2,8 @@
 import classes from './AccountDropDown.module.css';
 // Library Imports
 import { useState, useEffect } from 'react';
-// Component Imports
-import Card from '../../../Containers/Card/Card';
+// Helper Imports
+import { logout } from '../../../../HelperFunctions/account';
 
 // Dropdown menu on hover letting user log out, or go to Account Page
 const AccountDropDown = (props) => {
@@ -16,18 +16,14 @@ const AccountDropDown = (props) => {
 	}
 
 	// Log user out, will set page to Login Page
-	const logout = () => {
-		props.dispatch({ type: 'LOGOUT'	});
+	const logoutHandler = () => {
+		logout(props.dispatch);
 	}
 
 	const [dropdownMenu, setDropdownMenu] = useState(
-		<div className={classes.menu} >
-			{/* <Card > */}
-				
+		<div className={classes.menu} >				
 			<li onClick={openAccountPage}>Account</li>
-			<li onClick={logout}>Logout</li>
-				
-			{/* </Card> */}
+			<li onClick={logoutHandler}>Logout</li>
 		</div>
 	);
 

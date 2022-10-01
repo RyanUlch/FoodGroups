@@ -251,13 +251,14 @@ const reducer = (state, action) => {
 		case 'LOGIN': {
 			return { 
 				...nullUser,
-				user: action.payload,
-				page: 'recipes',
+				user: action.payload.user,
+				page: action.payload.page,
 			};
 		}
 
 		// Set user to nullUser and show login page
 		case 'LOGOUT': {
+			console.log('logging out');
 			return { ...nullUser, page: 'login'};
 		}
 		

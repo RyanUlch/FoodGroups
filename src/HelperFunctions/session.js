@@ -15,7 +15,7 @@ export const getSessionConfirm = (dispatch) => {
 		{ userID: sessionStorage.getItem('userID'), token: sessionStorage.getItem('sessionID') },
 	// SuccessHandler:
 		(response) => {
-			dispatch({ type: 'LOGIN', payload: response.payload	});
+			dispatch({ type: 'LOGIN', payload: {user: response.payload,	page: 'recipes'}});
 			getGroups(response.payload.userID, dispatch);
 		},
 	// FailureHandler:
