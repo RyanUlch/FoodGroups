@@ -10,7 +10,8 @@ import { UserContext } from '../../../Context/user-context';
 const Footer = (props) => {
 	const [ctx, ctxDispatch] = useContext(UserContext);
 
-	const welcomeMsg = () => {
+	const welcomeMsg = (event) => {
+		event.preventDefault();
 		ctxDispatch({ type: 'CHANGEPAGE', payload: 'welcome' });
 	}
 
@@ -18,13 +19,13 @@ const Footer = (props) => {
 		<Card className={classes.card}>
 			<footer className={classes.footer}>
 				<div className={`${classes.attrMain} ${classes.attr}`}>
-					Created By: Ryan Ulch
+					Created By:<a href='https://www.RyanUlch.com/Food-Groups'>Ryan Ulch</a>
 				</div>
 				<div className={classes.attrSub}>
 					
 				</div>
 				<div className={`${classes.attrSub} ${classes.attr}`}>
-					<a href='' onClick={welcomeMsg}>Welcome Message</a>&nbsp;&nbsp;
+					{!props.isLogin && <><a href='' onClick={welcomeMsg}>Welcome Message</a>&nbsp;&nbsp;</>}
 					Icons by <a target="_blank" href="https://icons8.com">Icons8</a>:&nbsp;&nbsp; 
 					<a target="_blank" href="https://icons8.com/icon/82751/user">[User]</a>&nbsp;-&nbsp; 
 					<a target="_blank" href="https://icons8.com/icon/85056/password">[Password]</a>&nbsp;-&nbsp;

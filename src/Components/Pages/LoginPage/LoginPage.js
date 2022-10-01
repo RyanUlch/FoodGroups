@@ -81,7 +81,7 @@ const LoginPage = (props) => {
 					</Card>
 				</section>
 			</main>
-			<Footer />
+			<Footer isLogin={true}/>
 		</>
 	);
 }

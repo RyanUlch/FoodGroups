@@ -14,6 +14,7 @@ import AddRecipeModal from './AddRecipeModal/AddRecipeModal';
 import RecipeDisplay from './RecipeDisplay/RecipeDisplay';
 import Sort from './Sort/Sort';
 import Card from '../../Containers/Card/Card';
+import Footer from '../../Containers/Footer/Footer';
 // Context Import
 import { UserContext } from '../../../Context/user-context';
 
@@ -172,6 +173,7 @@ const RecipePage = (props) => {
 					<RecipeList list={ctx.recipeOrder.order} selected={selectedItem} onSelectItem={setSelectedItem} onRemoveSelctItem={removeSelectionHandler}/>
 					{selectedItem && <RecipeDisplay setSelection={setSelectedItem} dinnerList={props.dinnerList} onDinnerSelect={props.onDinnerRecipes} onSetEdit={setEditingRecipe} onSetEditModal={setIsShowAddModal} id={selectedItem} />}
 				</main>
+				<Footer></Footer>
 			</div>
 		);
 	} else {
