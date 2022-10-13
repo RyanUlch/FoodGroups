@@ -44,7 +44,7 @@
 	max-height: 50vh;
 	min-height: 40vh;
 	overflow-y: auto;
-	padding-bottom: 20px;
+	/* padding-bottom: 20px; */
 }
 
 .descriptionContainer {
@@ -64,25 +64,36 @@
 	display: flex;
 	flex-direction: row;
 	text-align: left;
-	padding: 0 50px 0 50px;
+	padding: 0 5px;
 	height: 100%;
 }
 
 .ingredients {
+	list-style-type: circle;
 	display: flex;
 	flex-direction: column;
 	width: 50%;
 	border-right: 5px solid black;
+	padding: 5px;
 }
 
 .instructions {
 	display: flex;
 	flex-direction: column;
 	width: 50%;
+	padding: 5px;
 }
 
 .instruction {
-	margin-top: 3px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	margin: 5px;
+	text-align: left;
+	border: 1px solid grey;
+	border-radius: 2px;
 }
 
 button {
@@ -101,4 +112,10 @@ button {
 	text-align: right;
 	text-decoration: underline;
 	color: #00617f;
+	padding-left: 10px;
+}
+
+.subtitle {
+	text-align: center;
+	font-family: 'Kdam Thmor Pro';
 }

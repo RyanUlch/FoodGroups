@@ -8,14 +8,12 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	gap: 2px;
-	max-width: 15rem;
 	margin: 0;
 	height: 100%;
 }
 
 .top {
 	border-bottom: 1px solid black;
-	padding-top: 15px;
 }
 
 .title {
@@ -37,4 +35,24 @@
 	overflow-y: auto;
 	overflow-x: hidden;
 	background-color: #00617f;
+}
+
+.dinnerButton {
+	min-width: 25vw;
+}
+
+@media screen and (max-width: 480px) {
+	.title {
+		display: none;
+	}
+
+	.filter {
+		width: 69vw;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.filter {
+		max-width: 15rem;
+	}
 }

@@ -3,11 +3,23 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-between;
-	margin-top: 3px;
+	justify-content: flex-start;
+	margin: 5px;
+	text-align: left;
+	border: 1px solid grey;
+	border-radius: 2px;
 }
 
-.item {
-	width: 33%;
-	text-align: left;
+.name {
+	/* width: 49%; */
+	padding-right: 10px;
+}
+
+.amount {
+	/* width: 14%; */
+	padding-right: 10px;
+}
+
+.unit {
+	/* width: 34%; */
 }

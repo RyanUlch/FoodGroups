@@ -14,9 +14,9 @@ const IngredientDisplay = (props) => {
 
 	return (
 		<li className={classes.listItem}>
-			<span className={classes.item}>{props.ingredient.ingredient}</span>
-			<span className={classes.item}>{amount * props.servings}</span>
-			<span className={classes.item}>{props.ingredient.unit}</span>
+			<span className={classes.name}>{props.ingredient.ingredient}</span>
+			<span className={classes.amount}>{amount * props.servings}</span>
+			<span className={classes.unit}>{props.ingredient.unit}</span>
 		</li>
 	);
 }

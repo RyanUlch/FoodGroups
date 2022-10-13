@@ -25,7 +25,7 @@ const RecipeDisplay = (props) => {
 
 	// Display all ingredients for Recipe
 	const ingredients = () => {
-		let arr = [];
+		let arr = [<h5 className={classes.subtitle}>Ingredients:</h5>];
 		for (const ingredient of recipe.ingredients) {
 			arr.push(<IngredientDisplay key={arr.length} ingredient={ingredient} servings={recipe.servings}/>);//<li key={arr.length}>{ingredient.ingredient} {ingredient.amount * recipe.servings} {ingredient.unit}</li>)
 		}
@@ -34,7 +34,7 @@ const RecipeDisplay = (props) => {
 
 	// Display all instructions for Recipe
 	const instructions = () => {
-		let arr = [];
+		let arr = [<h5 className={classes.subtitle}>Instructions:</h5>];
 		for (const instruction of recipe.instructions) {
 			arr.push(<li className={classes.instruction} key={arr.length}>{instruction.instruction}<span className={classes.timer}>{timerEval(instruction)}</span></li>)
 		}
@@ -48,10 +48,10 @@ const RecipeDisplay = (props) => {
 			return '';
 		}
 		if (instruction.timer[0] > 0) {
-			timerString += `${instruction.timer[0]} Minutes `; 
+			timerString += `${instruction.timer[0]} M `; 
 		}
 		if (instruction.timer[1] > 0) {
-			timerString += `${instruction.timer[1]} Seconds`;
+			timerString += `${instruction.timer[1]} S`;
 		}
 		return timerString;
 	};
@@ -114,7 +114,7 @@ const RecipeDisplay = (props) => {
 		);
 	} else {
 		return (
-			<Card className={`${classes.showRecipe} itemSelected`}>
+    		<Card className={`${classes.showRecipe} itemSelected`}>
 				<div className={classes.displayContainer}>
 					<h4>{recipe.recipeName}</h4>
 					{ recipe.owner === ctx.user.userID ? <button onClick={editRecipeHandler}>Edit Recipe</button> : 'This Recipe is owned by someone else' }
@@ -129,12 +129,12 @@ const RecipeDisplay = (props) => {
 					<ServingSizeSelector servings={recipe.servings} onSelectServingSize={setRecipe}/>
 					<hr />
 					<div className={classes.sidebyside}>
-						<ul className={classes.ingredients}>{ingredients()}</ul>
+						<ul className={classes.ingredients}>{ingredients()}</ul> 
 						<ol className={classes.instructions}>{instructions()}</ol>
 					</div>
 				</div>
 			</Card>
-		);
+  		);
 	}
 }
 

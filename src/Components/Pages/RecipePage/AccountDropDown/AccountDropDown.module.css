@@ -2,7 +2,6 @@
 	list-style: none;
 	border: 2px solid black;
 	border-radius: 5px;
-	min-width: 5em;
 	padding: 5px;
 	text-align: center;
 	background-color: rgb(255, 255, 255);
@@ -15,7 +14,6 @@
 	border-right: 2px solid black;
 	border-radius: 0 0 5px 5px;
 	position: fixed;
-	width: 5em;
 	transform: translate(-7px, -1px);
 	text-decoration: underline;
 	text-align: center;
@@ -37,4 +35,24 @@
 
 .menu li:active {
 	color: rgb(58, 121, 121);
+}
+
+@media screen and (max-width: 480px) {
+	.list {
+		width: 29vw;
+	}
+
+	.menu {
+		width: 29vw;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.list {
+		width: 5em;
+	}
+
+	.menu {
+		width: 5em;
+	}
 }

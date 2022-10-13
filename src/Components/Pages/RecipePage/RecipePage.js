@@ -155,7 +155,7 @@ const RecipePage = (props) => {
 			<div className={classes.container}>
 				{isShowAddModal && <AddRecipeModal onUpdate={setDidUpdate} id={editingRecipe} onSubmitEdit={setEditingRecipe}  recipelength={nextKey} onCloseModal={closeModalHandler} onAddRecipe={props.onAddRecipe}></AddRecipeModal>}
 				<Header>
-					<h1 className={classes.title}>Food Groups</h1>
+					<h1 className={classes.title}>Food-Groups</h1>
 					<div className={classes.filter}>
 						<SearchBar onSetSearch={setSearchInput} searchInput={searchInput}/>
 						<Sort onSort={setSortBy} dispatch={ctxDispatch} />
@@ -166,7 +166,7 @@ const RecipePage = (props) => {
 					<div className={classes.top}>
 						<RecipeBar>
 							<DisplayButton onFilter={setFilterBy} groups={ctx.groups} />
-							<button disabled={disableButton} onClick={startDinnerHandler}>Start Dinner!{`(${props.dinnerList.length})`} </button>
+							<button className={classes.dinnerButton} disabled={disableButton} onClick={startDinnerHandler}>Start Dinner!{`(${props.dinnerList.length})`} </button>
 							<AddRecipeButton onOpenModal={openModalHandler}/>
 						</RecipeBar>
 					</div>
