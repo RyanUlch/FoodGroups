@@ -1,11 +1,11 @@
 .button {
-	width: 20rem;
+	width: 13rem;
 	font-family: 'Kdam Thmor Pro';
 	font-size: 2rem;
 }
 
 .card {
-	width: 80vw;
+	/* width: 100%; */
 	margin:20px auto;
 	background-color: #00617f;
 	overflow-y: auto;
@@ -15,7 +15,8 @@
 .main {
 	display: flex;
 	justify-content: center;
-	height: 93vh;
+	height: 80svh;
+	
 }
 
 .hr {

@@ -16,7 +16,7 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	width: 100vw;
-	height: 100vh;
+	height: 100svh;
 }
 
 
@@ -35,7 +35,7 @@
 
 .cardError {
 	width: 70vw;
-	margin: 50vh auto;
+	margin: 50svh auto;
 	transform: translateY(-50%);
 	text-align: center;
 }
@@ -43,7 +43,7 @@
 .card {
 	width: 90vw;
 	margin: auto;
-	height: 40vh;
+	height: 40svh;
 	text-align: center;
 	overflow-y: auto;
 	overflow-x: hidden;

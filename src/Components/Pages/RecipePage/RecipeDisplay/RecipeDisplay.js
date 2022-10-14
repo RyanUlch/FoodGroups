@@ -48,10 +48,10 @@ const RecipeDisplay = (props) => {
 			return '';
 		}
 		if (instruction.timer[0] > 0) {
-			timerString += `${instruction.timer[0]} M `; 
+			timerString += `${instruction.timer[0]}m `; 
 		}
 		if (instruction.timer[1] > 0) {
-			timerString += `${instruction.timer[1]} S`;
+			timerString += `${instruction.timer[1]}s`;
 		}
 		return timerString;
 	};

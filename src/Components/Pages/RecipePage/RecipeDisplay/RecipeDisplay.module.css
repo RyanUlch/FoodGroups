@@ -1,14 +1,12 @@
 .showRecipe {
 	max-width: 85vw;
-	position: sticky;
+	position: fixed;
 	bottom: 0;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	border-radius: 5px 5px 0 0 !important;
 	text-align: center;
 	z-index: 2;
 	min-height: 350px;
-	transition: height 2s;
 }
 
 .description {
@@ -23,7 +21,6 @@
 	margin: auto;
 	padding: 5px;
 	height: 100%;
-	vertical-align:middle;
 }
 
 .recipeHeader {
@@ -41,8 +38,8 @@
 }
 
 .displayContainer {
-	max-height: 50vh;
-	min-height: 40vh;
+	max-height: 50svh;
+	min-height: 40svh;
 	overflow-y: auto;
 	/* padding-bottom: 20px; */
 }

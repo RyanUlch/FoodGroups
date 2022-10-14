@@ -5,6 +5,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	max-height: 80vh;
-	padding-bottom: 55vh;
+	max-height: 80svh;
+	padding-bottom: 55svh;
 }
