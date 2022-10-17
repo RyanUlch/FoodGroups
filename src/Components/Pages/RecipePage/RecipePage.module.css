@@ -1,6 +1,6 @@
 .recipe-main {
 	width: 100vw;
-	height: 100svh;
+	height: 100vmin;
 }
 
 .filter {
@@ -22,7 +22,7 @@
 
 .cardError {
 	width: 70vw;
-	margin: 50svh auto;
+	margin: 50vmin auto;
 	/* transform: translateY(-50%); */
 	text-align: center;
 }
@@ -30,7 +30,7 @@
 .card {
 	width: 90vw;
 	margin: auto;
-	height: 40svh;
+	height: 40vmin;
 	text-align: center;
 	overflow-y: auto;
 	overflow-x: hidden;

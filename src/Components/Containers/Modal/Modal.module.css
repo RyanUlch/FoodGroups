@@ -16,7 +16,7 @@
 	min-width: 400px;
 	max-width: 800px;
 	width: 70vw;
-	height: 50svh;
+	height: 50vmin;
 	overflow-y: auto;
 	overflow-X:hidden;
 	left: 50%;

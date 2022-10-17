@@ -41,7 +41,7 @@
 .scrollarea {
 	overflow-y: auto;
 	overflow-x: hidden;
-	height: 50svh;
+	height: 50vmin;
 }
 
 .ingredientList {

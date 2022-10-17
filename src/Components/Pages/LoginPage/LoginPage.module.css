@@ -16,8 +16,8 @@
 
 .card {
 	background-color: rgb(0,97,127);
-	min-height: 20svh;
-	max-height: 40svh;
+	min-height: 20vmin;
+	max-height: 40vmin;
 	width: 60vw;
 	max-width: 700px;
 	display: flex;
@@ -36,7 +36,7 @@
 
 .page {
 	width: 100vw;
-	height: 95svh;
+	height: 95vmin;
 	min-height: 400px;
 	display: flex;
 	flex-direction: column;

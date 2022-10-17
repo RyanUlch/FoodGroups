@@ -1,12 +1,14 @@
 .showRecipe {
-	max-width: 85vw;
+	width: 85vw;
 	position: fixed;
 	bottom: 0;
 	margin: 0 auto;
 	border-radius: 5px 5px 0 0 !important;
 	text-align: center;
 	z-index: 2;
-	min-height: 350px;
+	height: 50vmax;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .description {
@@ -38,8 +40,7 @@
 }
 
 .displayContainer {
-	max-height: 50svh;
-	min-height: 40svh;
+	height: 100%;
 	overflow-y: auto;
 	/* padding-bottom: 20px; */
 }
@@ -62,7 +63,6 @@
 	flex-direction: row;
 	text-align: left;
 	padding: 0 5px;
-	height: 100%;
 }
 
 .ingredients {

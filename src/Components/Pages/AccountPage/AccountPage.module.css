@@ -27,7 +27,7 @@
 	margin: auto;
 	display: flex;
 	flex-direction: column;
-	max-height: 30svh;
+	max-height: 30vmin;
 }
 
 .grouptitle {
@@ -61,8 +61,8 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	min-height: 10svh;
-	max-height: 40svh;
+	min-height: 10vmin;
+	max-height: 40vmin;
 	flex-wrap: wrap;
 	overflow-x: auto;
 	margin: auto;
@@ -76,7 +76,7 @@
 .card {
 	width: 90vw;
 	margin: auto;
-	height: 40svh;
+	height: 40vmin;
 	text-align: center;
 	overflow-y: auto;
 	overflow-x: hidden;
@@ -85,7 +85,7 @@
 
 .cardError {
 	width: 70vw;
-	margin: 50svh auto;
+	margin: 50vmin auto;
 	transform: translateY(-50%);
 	text-align: center;
 }
