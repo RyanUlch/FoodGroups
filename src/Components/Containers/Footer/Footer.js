@@ -16,10 +16,10 @@ const Footer = (props) => {
 	}
 
 	return (
-		<Card className={classes.card}>
+		<Card id='footer' className={classes.card}>
 			<footer className={classes.footer}>
 				<div className={`${classes.attrMain} ${classes.attr}`}>
-					Created By:<a href='https://www.RyanUlch.com/Food-Groups'>Ryan Ulch</a>
+					Created By: <a target="_blank" href='//www.RyanUlch.com/'>Ryan Ulch</a>
 				</div>
 				<div className={classes.attrSub}>
 					

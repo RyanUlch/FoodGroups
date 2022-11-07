@@ -12,6 +12,31 @@ const RecipeList = (props) => {
 	const [ctx, ctxDispatch] = useContext(UserContext);
 	const [shownRecipes, setShownRecipes] = useState(null);
 
+	// Used to calculate the height that RecipeList should be at
+	const [windowHeight, setWindowHeight] = useState(0);
+	const setListHeight = () => {
+		if (windowHeight !== window.innerHeight) {
+			const eleContainer	= window.innerHeight;
+			const eleHeader		= document.querySelector('#header').scrollHeight;
+			const eleNav		= document.querySelector('#recipeNav').scrollHeight;
+			const eleFooter		= document.querySelector('#footer').scrollHeight;
+			const eleList		= document.querySelector('#recipeList');
+			const listHeight 	= eleContainer-eleHeader-eleNav-eleFooter;
+			console.log(`Container: ${eleContainer}, Header: ${eleHeader}, Nav:${eleNav}, Footer: ${eleFooter}, Total: ${listHeight}`);
+			eleList.style.height = `${listHeight}px`;
+			setWindowHeight(eleContainer);
+		}
+	}
+
+	useEffect(() => {
+		setListHeight();
+		window.addEventListener('resize', setListHeight);
+		return () => {
+			window.removeEventListener('resize', setListHeight)
+		}
+	}, []);
+	
+
 	// Used to force re-draw when selection changes so that selected recipe is highlighted
 	useEffect(() => {}, [props.selected]);
 
@@ -31,7 +56,7 @@ const RecipeList = (props) => {
 		return ('Loading...');
 	} else {
 		return (
-			<div className={`${classes.recipeList} deselectItem`}>
+			<div id='recipeList' className={`${classes.recipeList} deselectItem`}>
 				{shownRecipes && shownRecipes}
 				{!shownRecipes && ctx.recipes.length > 0 && `There are no recipes with that combination of group and search term.`}
 				{!shownRecipes && ctx.recipes.length === 0 && `You don't have any recipes. Create one by clicking 'Add Recipe', or join a group by clicking your user name in the top-right and then click join group.`}

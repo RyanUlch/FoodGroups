@@ -35,8 +35,6 @@ const App = () => {
 		retrieveImages(ctx, ctxDispatch);
 	}, [ctx.loaded]);
 
-	console.log(ctx);
-
 	return (
 			<>
 					{ctx.page === 'loading' 					&& <><h1>Loading...</h1><p>Please Wait</p></> }

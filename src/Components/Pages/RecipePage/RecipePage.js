@@ -152,7 +152,7 @@ const RecipePage = (props) => {
 
 	if (ctx.loaded) {
 		return (
-			<div className={classes.container}>
+			<div id='recipePageContainer' className={classes.container}>
 				{isShowAddModal && <AddRecipeModal onUpdate={setDidUpdate} id={editingRecipe} onSubmitEdit={setEditingRecipe}  recipelength={nextKey} onCloseModal={closeModalHandler} onAddRecipe={props.onAddRecipe}></AddRecipeModal>}
 				<Header>
 					<h1 className={classes.title}>Food-Groups</h1>
@@ -163,7 +163,7 @@ const RecipePage = (props) => {
 					<AccountDropDown dispatch={ctxDispatch} name={ctx.user.username}/>	
 				</Header>
 				<main className='deselectItem' onMouseDown={removeSelectionHandler}>
-					<div className={classes.top}>
+					<div id='recipeNav' className={classes.top}>
 						<RecipeBar>
 							<DisplayButton onFilter={setFilterBy} groups={ctx.groups} />
 							<button className={classes.dinnerButton} disabled={disableButton} onClick={startDinnerHandler}>Start Dinner!{`(${props.dinnerList.length})`} </button>

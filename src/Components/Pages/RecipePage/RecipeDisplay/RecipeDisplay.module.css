@@ -6,7 +6,7 @@
 	border-radius: 5px 5px 0 0 !important;
 	text-align: center;
 	z-index: 2;
-	height: 50vmax;
+	height: 50vh;
 	left: 50%;
 	transform: translateX(-50%);
 }

@@ -43,8 +43,8 @@ const Recipe = (props) => {
 	// If the recipe is not yet loaded, show loading within Card
 	if (recipe) {
 		return (
-			<Card className={selected && classes.Card}>
-				<div onClick={onSelectHandler} className={`${classes.recipeCard} ${selected && classes.selected}`}>
+			<Card className={`${selected && classes.Card} ${classes.recipeCard}`}>
+				<div onClick={onSelectHandler} className={`${classes.recipe} ${selected && classes.selected}`}>
 					{recipe !== null ? <h3 className={classes.title}>{recipe.recipeName}</h3> : ''}
 					{recipe !== null ? <p className={classes.recipeDescription}>{recipe.recipeDescription}</p> : ''}
 					{recipe !== null ? <img draggable='false' className={classes.image} src={displayImg()} /> : '' }

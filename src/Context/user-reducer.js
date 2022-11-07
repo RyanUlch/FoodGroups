@@ -197,7 +197,7 @@ const reducer = (state, action) => {
 			const index = state.recipes.findIndex(ele => ele.recipeID === action.payload.recipeID);
 			const recipes = [...state.recipes];
 			recipes[index].imgURL = action.payload.imgURL;
-			console.log(action.payload.imgURL);
+
 			return {
 				...state,
 				recipes: recipes,

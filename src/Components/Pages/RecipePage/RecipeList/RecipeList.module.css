@@ -5,19 +5,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	overflow: auto;
+	overflow-y: scroll;
 	padding-bottom: 10px;
-	height: fit-content;
-}
 
-@media screen and (max-width: 480px) {
-	.recipeList {
-		max-height: 90vmin;
-	}
-}
-
-@media screen and (min-width: 481px) {
-	.recipeList {
-		max-height: 80vmax;
-	}
+	padding-bottom: 50vh;
 }
