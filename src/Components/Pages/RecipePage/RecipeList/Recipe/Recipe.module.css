@@ -12,6 +12,7 @@
 	border-radius: 10px;
 	height: 62%;
 	border: 4px solid black;
+	background-color: black;
 }
 
 .title {
@@ -21,11 +22,11 @@
 .recipeDescription {
 	display: -webkit-box;
     max-width: 90%;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+	height: 2.8rem;
     overflow: hidden;
 	text-overflow: ellipsis;
-	height: 22%;
 	text-align: center;
 	margin: auto;
 }
