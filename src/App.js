@@ -1,5 +1,5 @@
 /* Imports for React, Components, Helpers and Context */
-
+import './App.css';
 // Library Imports
 import { useEffect, useState, useContext}	from 'react';
 // Component Imports - Main Pages
@@ -8,6 +8,7 @@ import DinnerPage 							from './Components/Pages/DinnerPage/DinnerPage';
 import LoginPage 							from './Components/Pages/LoginPage/LoginPage';
 import AccountPage 							from './Components/Pages/AccountPage/AccountPage';
 import WelcomePage							from './Components/Pages/WelcomePage/WelcomePage';
+import LandingPage							from './Components/Pages/LandingPage/LandingPage';
 // Helper Imports
 import { getSessionConfirm } 				from './HelperFunctions/session';
 import { retrieveImages } 					from './HelperFunctions/images';
@@ -25,7 +26,7 @@ const App = () => {
 		if (sessionStorage.getItem('sessionID')) {
 			getSessionConfirm(ctxDispatch);
 		} else {
-			ctxDispatch({ type: 'CHANGEPAGE', payload: 'login' });
+			ctxDispatch({ type: 'CHANGEPAGE', payload: 'landing' });
 		}
 	}, []);
 
@@ -39,6 +40,7 @@ const App = () => {
 	return (
 			<>
 					{ctx.page === 'loading' 					&& <><h1>Loading...</h1><p>Please Wait</p></> }
+					{ctx.page === 'landing'	&& !ctx.user.userID	&& <LandingPage />}
 					{ctx.page === 'login' 	&& !ctx.user.userID && <LoginPage />}
 					{ctx.page === 'welcome'	&& ctx.user.userID	&& <WelcomePage dispatch={ctxDispatch}/>}
 					{ctx.page === 'account' && ctx.user.userID 	&& <AccountPage />}

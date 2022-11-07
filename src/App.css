@@ -1,0 +1,12 @@
+:root {
+	--fontSizeTitle: clamp(0.2rem, 4vw, 2rem);
+	--fontSizePara: clamp(0.2rem, 2vw, 1rem);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: var(--fontSizeTitle);
+}
+
+p {
+	font-size: var(--fontSizePara);
+}
