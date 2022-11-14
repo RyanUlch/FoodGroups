@@ -19,8 +19,7 @@
 }
 
 .card {
-	width: 80vw;
-
+	width: clamp(1rem, 1000px, 1000px);
 }
 
 .img {
