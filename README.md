@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+:exclamation:Please Note:  
+This is an old project created while learning React and Node.js. It is not regularly maintained anymore. 
 
 ## Food-Groups
 
